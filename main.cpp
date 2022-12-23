@@ -34,8 +34,10 @@ int main() {
         }
     }
     // save QImage as PNG
-    if (!image.save(filename, "PNG")) {
+    if (!image.save(filename.insert(filename.lastIndexOf('.'), "_edited"), "PNG")) {
         std::cout << "Can't save the image" << std::endl;
         return 1;
     }
+    std::cout << "Resulted image was writed to: " << filename.toStdString() << std::endl;
+    return 0;
 }
