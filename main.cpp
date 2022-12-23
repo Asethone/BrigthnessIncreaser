@@ -3,8 +3,7 @@
 
 #include <QImage>
 
-int main()
-{
+int main() {
     // Get filename from stdin
     std::cout << "Enter full path to a PNG file:" << std::endl;
     std::string str;
