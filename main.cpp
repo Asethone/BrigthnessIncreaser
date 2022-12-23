@@ -28,7 +28,8 @@ int main() {
             int red = std::min(qRed(pixel) + offset, 255);
             int green = std::min(qGreen(pixel) + offset, 255);
             int blue = std::min(qBlue(pixel) + offset, 255);
-            pixel = qRgb(red, green, blue);
+            int alpha = qAlpha(pixel);      // cause PNG supports alpha channel
+            pixel = qRgba(red, green, blue, alpha);
             // set pixel with new color
             image.setPixel(i, j, pixel);
         }
